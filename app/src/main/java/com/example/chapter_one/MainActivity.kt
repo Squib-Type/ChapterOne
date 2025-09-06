@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_SHORT
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +25,29 @@ class MainActivity : AppCompatActivity() {
         trueButton = findViewById(R.id.true_button)
         falseButton = findViewById(R.id.false_button)
 
+
+        trueButton.setOnClickListener {
+            val snackBar = Snackbar.make(
+                it,
+                "Correct",
+                LENGTH_SHORT
+            )
+            snackBar.show()
+        }
+
+        falseButton.setOnClickListener {
+            val snackBar = Snackbar.make(
+                it,
+                "Incorrect",
+                LENGTH_SHORT
+            )
+            snackBar.show()
+        }
+
+
+
+
+        /*
         trueButton.setOnClickListener {
             Toast.makeText(
                 this,
@@ -39,6 +64,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             )
                 .show()
-        }
+        } */
     }
 }
